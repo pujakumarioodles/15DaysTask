@@ -1,10 +1,13 @@
 package com.example.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -20,12 +23,12 @@ public class User {
 	private String emailid;
 	private String password;
 	private int salary;
+
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+	private Role role;
 	
-	
-	
-	private String role;
-	
-	
+
 	public int getId() {
 		return id;
 	}
@@ -61,10 +64,12 @@ public class User {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public String getRole() {
+	
+	
+	public Role getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	public User() {
