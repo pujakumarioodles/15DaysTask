@@ -22,15 +22,7 @@ public class User {
 	private int salary;
 	
 	
-	public User(int id, String name, String emailid, String password, int salary, String role) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.emailid = emailid;
-		this.password = password;
-		this.salary = salary;
-		this.role = role;
-	}
+	
 	private String role;
 	
 	

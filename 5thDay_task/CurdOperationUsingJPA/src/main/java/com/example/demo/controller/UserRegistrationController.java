@@ -34,6 +34,7 @@ public class UserRegistrationController {
 	@GetMapping("/user")
 	public List<User> getALLUser()
 	{
+		System.out.println("puja1234");
 		return this.userService.getUser();
 		
 	}
@@ -42,7 +43,9 @@ public class UserRegistrationController {
 	@GetMapping("/user/{userId}")
 	public Optional<User> getUser(@PathVariable int userId)
 	{
+		System.out.println("puja123");
 		return this.userService.getUser(userId);
+		
 	}
 	
 	// to update user on the basis of id
@@ -59,11 +62,4 @@ public class UserRegistrationController {
 	{
 		 this.userService.deleteUser(userId);
 	}
-	
-	
-	
-	
-	
-	
-	
 }
